@@ -47,7 +47,7 @@ body {
 
 img {
     width: 100% !important;
-    height: 100% !important;
+    height: 100%;
     object-fit: cover !important;
 }
 
@@ -188,6 +188,8 @@ button {
 }
 
 .wsus__user_list_header .modal-body .file img {
+    height: 136px;
+    object-fit: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

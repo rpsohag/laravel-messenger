@@ -7,8 +7,13 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/messenger.js',
             ],
             refresh: true,
         }),
     ],
+    server: {
+        host: "127.0.0.1",
+        port: 3000
+    }
 });
