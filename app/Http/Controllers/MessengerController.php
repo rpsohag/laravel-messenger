@@ -32,6 +32,12 @@ class MessengerController extends Controller
             'results' => $getRecords,
             'last_page' => $searchResults->lastPage()
         ]);
+    }
 
+    public function fetchIdInfo(Request $request){
+        $user = User::where('id', $request['id'])->first();
+        return response()->json([
+            'user' => $user
+        ]);
     }
 }

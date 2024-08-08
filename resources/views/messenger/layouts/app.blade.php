@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('https://unpkg.com/nprogress@0.2.0/nprogress.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/messenger.js'])
 </head>
 
@@ -40,6 +41,7 @@
     <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
     <script src="{{ asset('frontend/js/emojionearea.min.js') }}"></script>
+    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>

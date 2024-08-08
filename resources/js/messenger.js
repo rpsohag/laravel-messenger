@@ -4,6 +4,14 @@
  * -------------------------
  */
 
+function enableChatBoxLoader(){
+    $('.wsus__message_paceholder').removeClass('d-none')
+}
+
+function disableChatBoxLoader(){
+    $('.wsus__message_paceholder').addClass('d-none')
+}
+
 
 function imagePreview(input, selector){
     if(input.files && input.files[0]){
@@ -85,6 +93,31 @@ function actionOnScroll(selector, callback, topScroll = false){
     })
 }
 
+function idInfo(id){
+    $.ajax({
+        method: 'GET',
+        url: "/messenger/id-info",
+        data: {
+            id: id
+        },
+        beforeSend: function(){
+            NProgress.start();
+            enableChatBoxLoader()
+        },
+        success: function(data){
+            $('.messenger_header').find("img").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)
+            $('.messenger_info_view').find(".avatar").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)
+            $('.messenger_header').find("h4").text(data.user.name)
+            $('.messenger_info_view').find("h3").text(data.user.name)
+            NProgress.done();
+            disableChatBoxLoader()
+        },
+        error: function(){
+            disableChatBoxLoader()
+        }
+    })
+}
+
 $(document).ready(function(){
     $('#select_file').change(function(){
         imagePreview(this, '.profile_image_preview')
@@ -108,5 +141,12 @@ $(document).ready(function(){
         let value = $('.user_search').val();
         searchUsers(value);
     })
+
+    // 
+    $("body").on("click", ".messenger_list_item", function(){
+        const dataId = $(this).attr("data-id");
+        idInfo(dataId);
+    })
 })
+
 
