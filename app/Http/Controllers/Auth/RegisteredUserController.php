@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('messenger.index', absolute: false));
+        return redirect(route('messenger.index', absolute: true));
     }
 }

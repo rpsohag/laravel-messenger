@@ -10,9 +10,9 @@ if(!function_exists('timeAgo')){
         if($seconds <= 60){
             return "a second ago";
         }elseif($minutes <= 60){
-            return "$minutes'\m ago";
+            return "$minutes m ago";
         }elseif($hours <= 24){
-            return "$hours'\h ago";
+            return "$hours h ago";
         }else{
             return date('j M y', strtotime($timestamp));
         }

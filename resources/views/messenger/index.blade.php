@@ -1,6 +1,6 @@
 @extends('messenger.layouts.app')
 @section('messenger_content')
-<section class="wsus__chat_app">
+<section class="wsus__chat_app show_info" >
 
    @include('messenger.layouts.user_list')
    
@@ -8,6 +8,9 @@
     <div class="wsus__chat_area">
 
         <div class="wsus__message_paceholder d-none"></div>
+        <div class="wsus__message_paceholder blank d-flex justify-content-center align-items-center">
+            <p class="nothing_share p-3">Select a user to start conversation!</p>
+        </div>
 
         <div class="wsus__chat_area_header">
             <div class="header_left messenger_header">
