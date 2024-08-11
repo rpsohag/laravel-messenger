@@ -31,4 +31,5 @@ Route::group(["middleware" => "auth"], function(){
     Route::get('/messenger/fetch-contacts', [MessengerController::class, 'fetchContacts'])->name("messenger.fetchContacts");
     Route::get('/messenger/update-contacts', [MessengerController::class, 'updateContacts'])->name("messenger.updateContacts");
     Route::post('/messenger/make-seen', [MessengerController::class, 'makeSeen'])->name("messenger.makeSeen");
+    Route::post('/messenger/favourite', [MessengerController::class, 'favourite'])->name("messenger.favourite");
 });

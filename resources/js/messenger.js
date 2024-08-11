@@ -101,6 +101,30 @@ function makeSeen(status){
     })
 }
 
+// add to favourite
+
+function star(user_id){
+    $(".favourite").toggleClass("active")
+    $.ajax({
+        method: "POST",
+        url: "/messenger/favourite",
+        data: {
+            _token: csrf_token,
+            id: user_id
+        },
+        success: function(data){
+            if(data.status == 'added'){
+                notyf.success("Added to favourite list")
+            }else{
+                notyf.success('Removed from favourite list');
+            }
+        },
+        error: function(xhr, status, errors){
+
+        }
+    })
+}
+
 
 /**
  * Get messages from database 
@@ -369,6 +393,7 @@ function idInfo(id){
         },
         success: function(data){
             fetchMessages(data.user.id, true)
+            data.favourite > 0 ? $('.favourite').addClass('active') : $('.favourite').removeClass('active')
             $('.messenger_header').find("img").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)
             $('.messenger_info_view').find(".avatar").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)
             $('.messenger_header').find("h4").text(data.user.name)
@@ -456,6 +481,11 @@ $(document).ready(function(){
     actionOnScroll(".messenger_contacts", function(){
         getContacts();
     })
+
+    $(".favourite").on("click", function(e){
+        e.preventDefault()
+        star(getMessengerId())
+    });
 })
 
 

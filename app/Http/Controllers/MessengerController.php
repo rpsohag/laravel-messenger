@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favourite;
 use App\Models\Message;
 use App\Models\User;
 use App\Traits\FileUploadTrait;
@@ -14,7 +15,8 @@ class MessengerController extends Controller
     use FileUploadTrait;
     public function index()
     {
-        return view('messenger.index');
+        $favouriteList = Favourite::with('users:id,name,avatar')->where('user_id', Auth::user()->id)->get();
+        return view('messenger.index', ['favouriteList' => $favouriteList]);
     }
 
     public function userSearch(Request $request)
@@ -43,8 +45,10 @@ class MessengerController extends Controller
     public function fetchIdInfo(Request $request)
     {
         $user = User::where('id', $request['id'])->first();
+        $favourite = Favourite::where(['user_id' => Auth::user()->id, 'favourite_id'=> $user->id])->exists();
         return response()->json([
-            'user' => $user
+            'user' => $user,
+            'favourite' => $favourite
         ]);
     }
 
@@ -164,5 +168,20 @@ class MessengerController extends Controller
 
         return true;
 
+    }
+
+    public function favourite(Request $request){
+        $query = Favourite::where(['user_id' => Auth::user()->id, 'favourite_id' => $request->id]);
+        $favouriteStatus = $query->exists();
+        if(!$favouriteStatus){
+            $star = new Favourite();
+            $star->user_id = Auth::user()->id;
+            $star->favourite_id = $request->id;
+            $star->save();
+            return response(["status" => "added"]);
+        }else{
+            $query->delete();
+            return response(["status" => "removed"]);
+        }
     }
 }
