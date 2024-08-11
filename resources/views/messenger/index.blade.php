@@ -17,8 +17,8 @@
                 <span class="back_to_list">
                     <i class="fas fa-arrow-left"></i>
                 </span>
-                <img src="{{ asset('frontend/images/author_img_2.jpg') }}" alt="User" class="img-fluid">
-                <h4>Jubaydul islam</h4>
+                <img src="" alt="User" class="img-fluid">
+                <h4></h4>
             </div>
             <div class="header_right">
                 <a href="#" class="favourite"><i class="fas fa-star"></i></a>
@@ -28,21 +28,7 @@
         </div>
 
         <div class="wsus__chat_area_body">
-            <div class="wsus__single_chat_area">
-                <div class="wsus__single_chat chat_right">
-                    <p class="messages">I'm fine, What about you ?</p>
-                    <span class="time"> 5h ago</span>
-                    <a class="action" href="#"><i class="fas fa-trash"></i></a>
-                </div>
-            </div>
-
-            <div class="wsus__single_chat_area">
-                <div class="wsus__single_chat">
-                    <p class="messages">I'm so so</p>
-                    <span class="time"> 5h ago</span>
-                    <a class="action" href="#"><i class="fas fa-trash"></i></a>
-                </div>
-            </div>
+           
         </div>
         <div class="wsus__chat_area_footer">
             <div class="footer_message">

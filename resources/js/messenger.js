@@ -6,7 +6,9 @@ let temporaryMsgId = 0;
 const messageForm = $(".message-form");
 const messageInput = $(".message_input");
 const messageBoxContainer = $(".wsus__chat_area_body");
+const messengerContactBox = $(".messenger_contacts");
 const csrf_token = $("meta[name=csrf-token]").attr("content");
+const auth_id = $("meta[name=auth_id]").attr("content");
 const getMessengerId = () => $("meta[name=id]").attr('content');
 const setMessengerId = (id) => $("meta[name=id]").attr('content', id);
 
@@ -52,6 +54,53 @@ function scrollToBottom(container){
     })
 }
 
+// update contact item
+
+function updateContactItem(user_id){
+    if(user_id != auth_id){
+        $.ajax({
+            method: "GET",
+            url: "/messenger/update-contacts",
+            data: {
+                user_id: user_id
+            },
+            success: function(data){
+                messengerContactBox.find(`.messenger_list_item[data-id="${user_id}"]`).remove()
+                messengerContactBox.prepend(data.contact_item)
+                if(user_id == getMessengerId()) updateSelectedContent(user_id)
+                },
+            error: function(xhr, status, errors){
+                
+            }
+        })
+    }
+}
+
+function updateSelectedContent(user_id){
+    $("body").find('.messenger_list_item').removeClass('active')
+    $("body").find(`.messenger_list_item[data-id="${user_id}"]`).addClass('active')
+}
+
+// make message seen
+
+function makeSeen(status){
+    $(`.messenger_item_list[data-id="${getMessengerId()}"]`).find(".unseen_count").remove()
+    $.ajax({
+        method: "POST",
+        url: "/messenger/make-seen",
+        data: {
+            _token: csrf_token,
+            id: getMessengerId()
+        },
+        success: function(data){
+
+        },
+        error: function(xhr, status, errors){
+
+        }
+    })
+}
+
 
 /**
  * Get messages from database 
@@ -86,6 +135,7 @@ function fetchMessages(id, newFetch = false){
             success: function(data){
                 messageLoading = false
                 messageBoxContainer.find(".message_loader").remove()
+                makeSeen(true)
                 if(messagePage == 1){
                     messageBoxContainer.html(data.messages)
                     scrollToBottom(messageBoxContainer)
@@ -107,6 +157,51 @@ function fetchMessages(id, newFetch = false){
             },
             error: function(xhr, status, errors){
                 console.log(errors)
+            }
+        })
+    }
+}
+
+/**
+ * Get contacts from db
+ */
+
+let contactPage = 1;
+let noMoreContacts = false;
+let contactLoading = false;
+
+function getContacts(){
+    if(!contactLoading && !noMoreContacts){
+        $.ajax({
+            method: "GET",
+            url: "/messenger/fetch-contacts",
+            data: {
+                page: contactPage
+            },
+            beforeSend: function(){
+                contactLoading = true;
+                let loader = `<div class="text-center contact_loader">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>`
+            messengerContactBox.append(loader)
+            },
+            success: function(data){
+                console.log(data)
+                contactLoading = false
+                messengerContactBox.find(".contact_loader").remove()
+                if(contactPage < 2){
+                    messengerContactBox.html(data.contacts)
+                }else{
+                    messengerContactBox.append(data.contacts)
+                }
+                noMoreContacts = contactPage >= data?.last_page
+                if(!noMoreContacts) contactPage += 1
+            },
+            error: function(xhr, status, errors){
+                contactLoading = false
+                messengerContactBox.find(".contact_loader").remove()
             }
         })
     }
@@ -145,6 +240,9 @@ function sendMessage(){
                 $(".emojionearea-editor").text("")
             },
             success: function(data){
+                // update contact item
+                updateContactItem(getMessengerId())
+
                 const tempMsgCardElement = messageBoxContainer.find(`.message_card[data-id=${data.tempID}]`);
                 tempMsgCardElement.before(data.message)
                 tempMsgCardElement.remove();
@@ -287,6 +385,18 @@ function idInfo(id){
 
 
 $(document).ready(function(){
+
+    if(window.innerWidth < 768){
+        $("body").on("click", ".messenger_list_item", function(){
+            $(".wsus__user_list").addClass("d-none")
+        })
+        $("body").on("click", ".back_to_list", function(){
+            $(".wsus__user_list").removeClass("d-none")
+        })
+    }
+
+    getContacts();
+
     $('#select_file').change(function(){
         imagePreview(this, '.profile_image_preview')
     })
@@ -313,6 +423,7 @@ $(document).ready(function(){
     // 
     $("body").on("click", ".messenger_list_item", function(){
         const dataId = $(this).attr("data-id");
+        updateSelectedContent(dataId)
         setMessengerId(dataId)
         idInfo(dataId);
     })
@@ -340,6 +451,11 @@ $(document).ready(function(){
     actionOnScroll(".wsus__chat_area_body", function(){
         fetchMessages(getMessengerId())
     }, true)
+
+    // contacts pagination
+    actionOnScroll(".messenger_contacts", function(){
+        getContacts();
+    })
 })
 
 

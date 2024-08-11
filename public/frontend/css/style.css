@@ -617,6 +617,7 @@ button {
 }
 
 .wsus__chat_area .wsus__message_paceholder.blank {
+    position: absolute;
     width: 100%;
     height: 100%;
     background: #ffffff !important;
