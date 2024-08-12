@@ -101,6 +101,40 @@ function makeSeen(status){
     })
 }
 
+// delete message
+
+function deleteMessage(message_id, ){
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            method: "DELETE",
+            url: "/messenger/delete-message",
+            data: {
+                _token : csrf_token,
+                message_id : message_id
+            },
+            beforeSend: function(){
+                $(`.message_card[data-id="${message_id}"]`).remove()
+            },
+            success: function(data){
+                updateContactItem(getMessengerId())
+            },
+            error: function(xhr, status, errors){
+
+            }
+          })
+        }
+      });
+}
+
 // add to favourite
 
 function star(user_id){
@@ -418,6 +452,9 @@ function idInfo(id){
 
 
 
+
+
+
 $(document).ready(function(){
 
     if(window.innerWidth < 768){
@@ -494,6 +531,11 @@ $(document).ready(function(){
     $(".favourite").on("click", function(e){
         e.preventDefault()
         star(getMessengerId())
+    });
+    $("body").on("click", ".delete_message", function(e){
+        e.preventDefault()
+        const message_id = $(this).data("id")
+        deleteMessage(message_id)
     });
 })
 

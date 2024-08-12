@@ -32,4 +32,5 @@ Route::group(["middleware" => "auth"], function(){
     Route::get('/messenger/update-contacts', [MessengerController::class, 'updateContacts'])->name("messenger.updateContacts");
     Route::post('/messenger/make-seen', [MessengerController::class, 'makeSeen'])->name("messenger.makeSeen");
     Route::post('/messenger/favourite', [MessengerController::class, 'favourite'])->name("messenger.favourite");
+    Route::delete('/messenger/delete-message', [MessengerController::class, 'deleteMessage'])->name("messenger.deleteMessage");
 });
