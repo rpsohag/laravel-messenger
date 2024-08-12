@@ -46,9 +46,21 @@ class MessengerController extends Controller
     {
         $user = User::where('id', $request['id'])->first();
         $favourite = Favourite::where(['user_id' => Auth::user()->id, 'favourite_id'=> $user->id])->exists();
+        $sharedAttachments = Message::where('from_id', Auth::user()->id)->where('to_id', $request->id)->whereNotNull('attachment')
+        ->orWhere('from_id', $request->id)->where('to_id', Auth::user()->id)->whereNotNull('attachment')
+        ->latest()->get();
+
+        $contents = "";
+
+        foreach($sharedAttachments as $photo){
+            $contents .= view('messenger.components.gallery_item',['photo' => json_decode($photo->attachment, true)])->render();
+        }
+
+
         return response()->json([
             'user' => $user,
-            'favourite' => $favourite
+            'favourite' => $favourite,
+            'sharedAttachments' => $contents
         ]);
     }
 

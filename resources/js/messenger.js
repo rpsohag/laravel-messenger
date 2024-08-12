@@ -393,6 +393,15 @@ function idInfo(id){
         },
         success: function(data){
             fetchMessages(data.user.id, true)
+            $(".wsus__chat_info_gallery").html("")
+
+            if(data.sharedAttachments){
+                $(".nothing_share").addClass('d-none')
+                $(".wsus__chat_info_gallery").html(data.sharedAttachments)
+            }else{
+                $(".nothing_share").removeClass('d-none')
+            }
+
             data.favourite > 0 ? $('.favourite').addClass('active') : $('.favourite').removeClass('active')
             $('.messenger_header').find("img").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)
             $('.messenger_info_view').find(".avatar").attr("src", import.meta.env.VITE_APP_URL + '/' + data.user.avatar)

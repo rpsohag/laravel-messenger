@@ -11,39 +11,12 @@
         <h3 class="user_name">Hasan Masud</h3>
         <a href="#" class="delete_chat">Delete Conversation</a>
         <p class="photo_gallery">Shared Photos</p>
-        <span class="nothing_share">Nothing shared yet</span>
+        <span class="nothing_share d-none">Nothing shared yet</span>
 
         <ul class="wsus__chat_info_gallery">
-            <li>
-                <a class="venobox" data-gall="gallery01" href="{{ asset('frontend/images/chat_img.png') }}">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
-            <li>
-                <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
-            <li>
-                <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
-            <li>
-                <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
-            <li>
-                <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
-            <li>
-                <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-                    <img src="{{ asset('frontend/images/chat_img.png') }}" alt="gallery1" class="img-fluid w-100">
-                </a>
-            </li>
+
+          
+          
         </ul>
     </div>
 </div>
