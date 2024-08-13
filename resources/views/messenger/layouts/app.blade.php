@@ -8,6 +8,7 @@
     <title>Messenger Application</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="auth_id" content="{{ auth()->user()->id }}">
+    <meta name="url" content="{{ public_path() }}">
     <meta name="id" content="" />
     <link rel="icon" type="image/png" href="{{ asset('frontend/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">

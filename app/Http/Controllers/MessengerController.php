@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favourite;
 use App\Models\Message;
+use App\Events\Message as EventMessage;
 use App\Models\User;
 use App\Traits\FileUploadTrait;
 use Illuminate\Http\Request;
@@ -81,6 +82,10 @@ class MessengerController extends Controller
         $message->body = $request->message;
         if ($attachmentPath) $message->attachment = json_encode($attachmentPath);
         $message->save();
+
+        // broadcast event
+
+        EventMessage::dispatch($message);
 
         return response()->json([
             'message' => $message->attachment ?  $this->messageCard($message->id, $request->message, $message->from_id, $message->created_at, $message->attachment) : $this->messageCard($message->id, $request->message, $message->from_id, $message->created_at),

@@ -9,6 +9,7 @@ const messageBoxContainer = $(".wsus__chat_area_body");
 const messengerContactBox = $(".messenger_contacts");
 const csrf_token = $("meta[name=csrf-token]").attr("content");
 const auth_id = $("meta[name=auth_id]").attr("content");
+const url = $("meta[name=url]").attr("content");
 const getMessengerId = () => $("meta[name=id]").attr('content');
 const setMessengerId = (id) => $("meta[name=id]").attr('content', id);
 
@@ -214,7 +215,7 @@ function fetchMessages(id, newFetch = false){
                 disableChatBoxLoader()
             },
             error: function(xhr, status, errors){
-                console.log(errors)
+                // console.log(errors)
             }
         })
     }
@@ -246,7 +247,7 @@ function getContacts(){
             messengerContactBox.append(loader)
             },
             success: function(data){
-                console.log(data)
+                // console.log(data)
                 contactLoading = false
                 messengerContactBox.find(".contact_loader").remove()
                 if(contactPage < 2){
@@ -339,6 +340,34 @@ function sendTempMessageCard(message, tempId, attachment = false){
             <p class="messages">${message}</p>
             <span class="clock"> <i class="fas fa-clock"></i> 5h ago</span>
             <a class="action" href="#"><i class="fas fa-trash" aria-hidden="true"></i></a>
+            </div>
+            </div>
+            `
+
+        }
+}
+
+// receive message
+
+function receiveMessageCard(e){
+    if(e.attachment){
+        return `
+          <div class="wsus__single_chat_area message_card" data-id="${e.id}">
+                <div class="wsus__single_chat">
+                    <a class="venobox" data-gall="gallery${e.id}" href="${import.meta.env.VITE_APP_URL + '/' + e.attachment}">
+                        <img src="${import.meta.env.VITE_APP_URL + '/' + e.attachment}" alt="gallery1" class="img-fluid w-100">
+                    </a>
+                    ${e.body?.length > 0 ? `<p class="messages">${e.body}</p>` : ""}
+                    <span class="clock"> <i class="fas fa-clock"></i>now</span>
+                </div>
+            </div>
+        `
+    }else{
+            return `
+            <div class="wsus__single_chat_area message_card" data-id="${e.id}">
+            <div class="wsus__single_chat">
+            <p class="messages">${e.body}</p>
+            <span class="clock"> <i class="fas fa-clock"></i>now</span>
             </div>
             </div>
             `
@@ -451,8 +480,21 @@ function idInfo(id){
 }
 
 
+// var channel = Echo.channel('message');
+// channel.listen('message', function(data) {
+//   alert(JSON.stringify(data));
+// });
 
 
+
+window.Echo.private("message." + auth_id)
+    .listen("Message", (e) => {
+        let message = receiveMessageCard(e)
+        if(getMessengerId() == e.from_id){
+            messageBoxContainer.append(message)
+            scrollToBottom(messageBoxContainer)
+        }
+    })
 
 
 $(document).ready(function(){
