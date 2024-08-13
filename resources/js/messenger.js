@@ -55,6 +55,13 @@ function scrollToBottom(container){
     })
 }
 
+// play notification
+function playNotificationSound(){
+    const sound = new Audio(import.meta.env.VITE_APP_URL + '/' + "frontend/music/messenger-tone.mp3")
+    sound.play()
+}
+
+
 // update contact item
 
 function updateContactItem(user_id){
@@ -480,15 +487,14 @@ function idInfo(id){
 }
 
 
-// var channel = Echo.channel('message');
-// channel.listen('message', function(data) {
-//   alert(JSON.stringify(data));
-// });
-
-
-
 window.Echo.private("message." + auth_id)
     .listen("Message", (e) => {
+
+        if(getMessengerId() != e.from_id){
+            updateContactItem(e.from_id)
+            playNotificationSound()
+        }
+
         let message = receiveMessageCard(e)
         if(getMessengerId() == e.from_id){
             messageBoxContainer.append(message)
