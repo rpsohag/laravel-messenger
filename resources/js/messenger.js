@@ -1,7 +1,7 @@
 /**
  * Global Variables
  */
-
+let activeUsersIds = [];
 let temporaryMsgId = 0;
 const messageForm = $(".message-form");
 const messageInput = $(".message_input");
@@ -75,6 +75,10 @@ function updateContactItem(user_id){
             success: function(data){
                 messengerContactBox.find(`.messenger_list_item[data-id="${user_id}"]`).remove()
                 messengerContactBox.prepend(data.contact_item)
+
+                if(activeUsersIds.includes(+user_id)){
+                    userActive(user_id)
+                }
                 if(user_id == getMessengerId()) updateSelectedContent(user_id)
                 },
             error: function(xhr, status, errors){
@@ -264,6 +268,8 @@ function getContacts(){
                 }
                 noMoreContacts = contactPage >= data?.last_page
                 if(!noMoreContacts) contactPage += 1
+
+                updateUserActiveList()
             },
             error: function(xhr, status, errors){
                 contactLoading = false
@@ -502,6 +508,60 @@ window.Echo.private("message." + auth_id)
         }
     })
 
+// listen online
+
+window.Echo.join('online')
+    .here((users) => {
+        $.each(users, function(user){
+        setActiveUserIds(users)
+         userActive(user.id)
+        })
+    })
+    .joining((user) => {
+        addNewUserId(user.id)
+        userActive(user.id)
+        
+    })
+    .leaving((user) => {
+        removeUserId(user.id)
+       userInActive(user.id)
+    })
+
+function updateUserActiveList(){
+    $(".messenger_list_item").each(function(index,value){
+        const id = $(this).data('id');
+        if(activeUsersIds.includes(id))
+        userActive(id)
+    })
+}
+
+function userActive(id){
+    let contactItem = $(`.messenger_list_item[data-id="${id}"]`).find('.img').find('span')
+    contactItem.removeClass('inactive')
+    contactItem.addClass('active')
+}
+function userInActive(id){
+    let contactItem = $(`.messenger_list_item[data-id="${id}"]`).find('.img').find('span')
+    contactItem.removeClass('active')
+    contactItem.addClass('inactive')
+}
+
+function setActiveUserIds(users){
+    $.each(users, function(index, user){
+        activeUsersIds.push(user.id)
+    })
+}
+
+function addNewUserId(id){
+        activeUsersIds.push(id)
+}
+
+function removeUserId(id){
+    let index = activeUsersIds.indexOf(id)
+    if(index != -1){
+        activeUsersIds.splice(index, 1)
+    }
+}
 
 $(document).ready(function(){
 
