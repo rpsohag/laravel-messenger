@@ -110,7 +110,7 @@ class MessengerController extends Controller
         ];
 
         if (count($messages) < 1) {
-            $response["messages"] = "<div class='d-flex justify-content-center align-items-center h-100'><p>Say Hi and start conversation!</p></div>";
+            $response["messages"] = "<div class='d-flex justify-content-center no_message align-items-center h-100'><p>Say Hi and start conversation!</p></div>";
             return response()->json($response);
         }
 

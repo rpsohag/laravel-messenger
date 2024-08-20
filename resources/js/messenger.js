@@ -45,7 +45,8 @@ function imagePreview(input, selector){
 
 function messageFormReset(){
     $(".attachment_block").addClass('d-none')
-    messageForm.trigger("reset")
+    $(".emojionearea-editor").text("")
+    $("input[type='file']").val(null)
 }
 
 // scroll to bottom
@@ -307,14 +308,13 @@ function sendMessage(){
                 }else{
                     messageBoxContainer.append(sendTempMessageCard(inputValue, tempID))
                 }
+                $(".no_message").addClass('d-none')
                 scrollToBottom(messageBoxContainer)
-                messageForm.trigger("reset")
-                $(".emojionearea-editor").text("")
             },
             success: function(data){
+                makeSeen(true)
                 // update contact item
                 updateContactItem(getMessengerId())
-
                 const tempMsgCardElement = messageBoxContainer.find(`.message_card[data-id=${data.tempID}]`);
                 tempMsgCardElement.before(data.message)
                 tempMsgCardElement.remove();
