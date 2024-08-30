@@ -1,172 +1,296 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- Viewport-->
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- SEO Meta Tags-->
+    <meta name="keywords" content="chat, messenger, conversation, social, communication" />
+    <meta name="description" content="laravel messenger is a Bootstrap based modern and fully responsive Messaging template to help build Messaging or Chat application fast and easy." />
+    <meta name="subject" content="communication">
+    <meta name="copyright" content="frontendmatters">
+    <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
+    <title>Laravel Messenger</title>
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/images/chat_list_icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/images/chat_list_icon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/images/chat_list_icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('frontend/images/chat_list_icon.png') }}" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{{ asset('frontend/css/messenger-home.min.css') }}">
+</head>
 
-        <title>Laravel</title>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+        <div class="container">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="index.html">
+                <img src="{{ asset('frontend/images/logo.webp') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                Laravel Messenger
+            </a>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-        </style>
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://github.com/rpsohag/laravel-messenger">Github</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Start -->
+    <main class="pt-5">
+        <!-- Section Start -->
+        <section class="bg-light py-5 theme-shadow card-bg-1">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-10">
+                        <!-- Page Heading -->
+                        <h1 class="display-4 font-weight-semibold">Laravel Messanger</h1>
+
+                        <!-- Page heading Subtext -->
+                        <p>
+                            The powerful bootstrap based messaging framework that especially build for developers and designer to help build messaging and chat application
+                            fast and easily. It is a fully responsive template.
+                        </p>
+
+                        <!-- Page Action Buttons -->
+                        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-items-sm-start mt-4">
+                            <a href="{{ route('login') }}" class="btn btn-md btn-primary mb-2 mx-2">Login</a>
+                            <a href="{{ route('register') }}" class="btn btn-md btn-danger mx-2">Register</a>
                         </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section End -->
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
+        <!-- Section Start -->
+        <section class="bg-white py-5 border-bottom theme-shadow" id="demos">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-10">
 
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
+                        <!-- Section Title -->
+                        <div class="badge badge-secondary">Message Pages + Authentication Pages</div>
+                        <h2 class="font-weight-semibold">Screenshots</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Light Skin Demo -->
+                        <a href="{{ route('login') }}" class="border rounded d-block overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-login.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Login</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Light Skin Demo -->
+                        <a href="{{ route('register') }}" class="border rounded d-block overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-register.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Registration</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Dark Skin Demo -->
+                        <a href="{{ route('dashboard') }}" class="border rounded d-block overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-home.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Message Home</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Dark Skin Demo -->
+                        <a href="{{ route('dashboard') }}" class="border rounded d-block overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-search.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Search</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Dark Skin Demo -->
+                        <a href="{{ route('dashboard') }}" class="border rounded d-block overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-profile-update.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Profile Update</div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-sm-6 col-md-4 my-3">
+                        <!-- Dark reset password demo -->
+                        <a href="{{ route('password.request') }}" class="border rounded d-block theme-shadow-sm overflow-hidden">
+                            <img src="{{ asset('frontend/images/messenger-forgot-password.png') }}" alt="Image" class="img-fluid border-bottom rounded-top">
+                            <div class="demos-title p-2 bg-light font-weight-bold">Forgot password</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section End -->
 
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
+        <!-- Section Start -->
+        <section class="bg-white py-5 border-bottom theme-shadow" id="features">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-4">
+                    <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-10">
+                        <!-- Section Title -->
+                        <div class="badge badge-secondary">Technology</div>
+                        <h2 class="font-weight-semibold">Technology and Features</h2>
+                    </div>
+                </div>
+                <div class="row row-eq-height">
+                   
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="50px" height="50px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#423299;" d="M511.344,274.266C511.77,268.231,512,262.143,512,256C512,114.615,397.385,0,256,0S0,114.615,0,256 c0,117.769,79.53,216.949,187.809,246.801L511.344,274.266z"></path> <path style="fill:#1B0683;" d="M511.344,274.266L314.991,77.913L119.096,434.087l68.714,68.714C209.522,508.787,232.385,512,256,512 C391.243,512,501.976,407.125,511.344,274.266z"></path> <polygon style="fill:#FFFFFF;" points="278.328,333.913 255.711,77.913 119.096,77.913 119.096,311.652 "></polygon> <polygon style="fill:#E8E6E6;" points="392.904,311.652 392.904,155.826 337.252,133.565 314.991,77.913 255.711,77.913 256.067,333.913 "></polygon> <polygon style="fill:#FFFFFF;" points="314.991,155.826 314.991,77.913 392.904,155.826 "></polygon> <rect x="119.096" y="311.652" style="fill:#6A5CAF;" width="273.809" height="122.435"></rect> <g> <path style="fill:#FFFFFF;" d="M230.64,354.863l-7.795,9.233c-3.48-4.238-8.627-6.887-13.32-6.887 c-8.4,0-14.757,6.659-14.757,15.363c0,8.854,6.357,15.589,14.757,15.589c4.466,0,9.611-2.422,13.32-6.206l7.87,8.324 c-5.675,5.827-14.076,9.687-21.871,9.687c-15.969,0-27.849-11.73-27.849-27.245c0-15.287,12.184-26.79,28.305-26.79 C217.169,345.933,225.342,349.413,230.64,354.863z"></path> <path style="fill:#FFFFFF;" d="M279.988,351.684l-5.071,10.519c-5.6-3.255-12.639-5.524-16.952-5.524 c-3.482,0-5.827,1.287-5.827,3.86c0,9.157,28.001,3.936,28.001,23.082c0,10.595-9.384,16.196-21.19,16.196 c-8.854,0-17.936-3.33-24.218-8.476l5.221-10.368c5.449,4.768,13.623,7.947,19.148,7.947c4.238,0,6.886-1.589,6.886-4.617 c0-9.384-28.001-3.783-28.001-22.552c0-9.763,8.4-15.969,21.114-15.969C266.744,345.781,274.539,348.128,279.988,351.684z"></path> <path style="fill:#FFFFFF;" d="M330.622,351.684l-5.071,10.519c-5.601-3.255-12.639-5.524-16.952-5.524 c-3.48,0-5.827,1.287-5.827,3.86c0,9.157,28.001,3.936,28.001,23.082c0,10.595-9.384,16.196-21.19,16.196 c-8.854,0-17.936-3.33-24.218-8.476l5.222-10.368c5.449,4.768,13.621,7.947,19.147,7.947c4.238,0,6.887-1.589,6.887-4.617 c0-9.384-28.002-3.783-28.002-22.552c0-9.763,8.4-15.969,21.114-15.969C317.379,345.781,325.173,348.128,330.622,351.684z"></path> </g> </g></svg>
+                            <h6 class="mt-3">CSS</h6>
+                            <p class="text-muted mb-0">Code is written in CSS files</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50" width="50" viewBox="0 0 612 612" focusable="false" role="img">
+                                <path fill="#563D7C" d="M612 510c0 56.1-45.9 102-102 102H102C45.9 612 0 566.1 0 510V102C0 45.9 45.9 0 102 0h408c56.1 0 102 45.9 102 102v408z" />
+                                <path fill="#FFF" d="M166.3 133h173.5c32 0 57.7 7.3 77 22s29 36.8 29 66.5c0 18-4.4 33.4-13.2 46.2-8.8 12.8-21.4 22.8-37.8 29.8v1c22 4.7 38.7 15.1 50 31.2 11.3 16.2 17 36.4 17 60.8 0 14-2.5 27.1-7.5 39.2-5 12.2-12.8 22.7-23.5 31.5s-24.3 15.8-41 21-36.5 7.8-59.5 7.8h-164V133zm62.5 149.5h102c15 0 27.5-4.2 37.5-12.8s15-20.8 15-36.8c0-18-4.5-30.7-13.5-38s-22-11-39-11h-102v98.6zm0 156.5h110.5c19 0 33.8-4.9 44.2-14.8 10.5-9.8 15.8-23.8 15.8-41.8 0-17.7-5.2-31.2-15.8-40.8s-25.2-14.2-44.2-14.2H228.8V439z" />
+                            </svg>
+                            <h6 class="mt-3">Bootstrap 5.3.2</h6>
+                            <p class="text-muted mb-0">Built on top of awesome Bootstrap latest 5.3.2 version</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <svg width="50px" height="50px" viewBox="0 -188.5 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M43.4764185,0.0539721045 C43.6002633,-0.0183847726 43.7534906,-0.0183847726 43.8773354,0.0539721045 L43.8773354,0.0539721045 L87.1550694,25.0208039 C87.2750732,25.0963786 87.3495684,25.2267451 87.3538966,25.3685017 L87.3538966,25.3685017 L87.3538966,35.1040405 C87.3549828,35.1776711 87.3153856,35.2459422 87.2508637,35.2814374 L87.2508637,35.2814374 L43.7815411,60.3476114 C43.7141303,60.3830908 43.675103,60.4505016 43.675103,60.5214603 L43.675103,60.5214603 L43.675103,70.1328213 C43.6728288,70.2063748 43.7113952,70.2751612 43.7753337,70.3115912 C43.8392722,70.3480213 43.9181097,70.3461278 43.9802255,70.3066702 L43.9802255,70.3066702 L87.0521792,45.4604683 C87.1152256,45.4272831 87.1909519,45.429071 87.2523619,45.4651945 C87.313772,45.5013181 87.3521271,45.5666369 87.3538966,45.6378651 L87.3538966,45.6378651 L87.3538966,55.2456782 C87.3527551,55.3187114 87.3137608,55.3859429 87.2508637,55.423075 L87.2508637,55.423075 L43.7779931,80.4998929 C43.7141303,80.5353722 43.6786509,80.602783 43.6786509,80.6737418 L43.6786509,80.6737418 L43.6786509,90.2886507 C43.6758861,90.3616945 43.7134521,90.4303574 43.7764562,90.4674186 C43.8394602,90.5044798 43.9177259,90.5039532 43.9802255,90.4660475 L43.9802255,90.4660475 L87.0521792,65.6162977 C87.1146788,65.578392 87.1929446,65.5778654 87.2559486,65.6149266 C87.3189526,65.6519878 87.3565186,65.7206507 87.3538966,65.7936945 L87.3538966,65.7936945 L87.3538966,75.4015076 C87.3557983,75.4753479 87.3159726,75.544013 87.2508637,75.5789044 L87.2508637,75.5789044 L43.7815411,100.655722 C43.7141303,100.691202 43.675103,100.76216 43.675103,100.833119 L43.675103,100.833119 L43.675103,134.630766 C43.6767495,134.694335 43.6410785,134.755951 43.5838214,134.791021 C43.5265643,134.826091 43.455468,134.82987 43.3948159,134.801067 L43.3948159,134.801067 L35.0394246,130.000708 C34.9791097,129.961681 34.9436303,129.89427 34.9436303,129.823311 L34.9436303,129.823311 L34.9436303,45.4001533 C34.9436303,45.3291946 34.904603,45.2582359 34.8407401,45.2227565 L34.8407401,45.2227565 L26.5101843,40.41885 C26.4476847,40.3809443 26.369419,40.3804177 26.306415,40.4174789 C26.243411,40.4545401 26.205845,40.523203 26.2086097,40.5962468 L26.2086097,40.5962468 L26.2086097,124.554625 C26.2083197,124.627998 26.1689837,124.695666 26.105368,124.732226 C26.0417523,124.768787 25.963482,124.768709 25.8999392,124.732022 L25.8999392,124.732022 L17.5693834,119.92102 C17.5055206,119.88554 17.4700412,119.814581 17.4700412,119.743623 L17.4700412,119.743623 L17.4700412,35.3346564 C17.4700412,35.2601497 17.4310139,35.1927389 17.3742469,35.1572596 L17.3742469,35.1572596 L9.03659523,30.3498051 C8.97464491,30.3122844 8.89718542,30.3114466 8.83443805,30.3476186 C8.77169068,30.3837906 8.73359742,30.4512411 8.73502059,30.523654 L8.73502059,30.523654 L8.73502059,114.471388 C8.73778535,114.544432 8.70021934,114.613095 8.63721532,114.650156 C8.5742113,114.687218 8.49594556,114.686691 8.43344596,114.648785 L8.43344596,114.648785 L0.102890169,109.841331 C0.0354793688,109.809399 1.42108547e-14,109.738441 1.42108547e-14,109.667482 L1.42108547e-14,109.667482 L1.42108547e-14,25.13079 L8.51150057,20.2062536 C8.64322883,20.1302002 8.80552474,20.1302002 8.93725299,20.2062536 L8.93725299,20.2062536 L52.1830556,45.1730854 C52.3147838,45.2491387 52.4770798,45.2491387 52.608808,45.1730854 L52.608808,45.1730854 L60.8400216,40.4259458 C60.905093,40.3915213 60.9457968,40.3239391 60.9457968,40.250323 C60.9457968,40.1767068 60.905093,40.1091246 60.8400216,40.0747001 L60.8400216,40.0747001 L17.7751638,15.2249502 C17.7119193,15.1899581 17.672667,15.1233806 17.672667,15.0511013 C17.672667,14.978822 17.7119193,14.9122445 17.7751638,14.8772524 L17.7751638,14.8772524 L25.9815418,10.1336608 C26.11327,10.0576074 26.2755659,10.0576074 26.4072942,10.1336608 L26.4072942,10.1336608 L69.6814803,35.0933967 C69.8076952,35.1615252 69.9597302,35.1615252 70.0859451,35.0933967 L70.0859451,35.0933967 L78.3171586,30.3462572 C78.376732,30.3085287 78.4128385,30.2429237 78.4128385,30.1724083 C78.4128385,30.1018928 78.376732,30.0362878 78.3171586,29.9985593 L78.3171586,29.9985593 L35.2452049,5.1523574 C35.1819605,5.11736532 35.1427082,5.05078781 35.1427082,4.97850849 C35.1427082,4.90622917 35.1819605,4.83965166 35.2452049,4.80465958 L35.2452049,4.80465958 Z M282.777665,24.0735048 C295.018047,24.0735048 305.754104,30.8748998 306.382089,48.0859415 C306.396314,48.9692563 305.703674,49.7028257 304.820997,49.7392801 L296.777824,49.7392801 C295.954158,49.7464118 295.269368,49.1068589 295.22028,48.284626 C294.680993,38.9322644 289.068157,34.458316 282.032598,34.458316 C275.266683,34.458316 270.196681,38.4284574 270.196681,44.7792644 C270.196681,50.2643748 273.510454,53.2446418 282.16742,59.3258056 L294.27298,68.0608262 C302.656755,74.1455379 307.389703,79.6377442 307.389703,88.3018061 C307.389703,102.330348 295.823429,110.660904 282.234831,110.660904 C269.384203,110.660904 259.258391,103.650181 258.158531,86.4533309 C258.126706,86.0212976 258.277499,85.5957154 258.574233,85.280098 C258.870967,84.9644805 259.28645,84.7877515 259.719623,84.7928965 L267.897618,84.7928965 C268.711678,84.8115652 269.381258,85.4398698 269.451614,86.2510985 C270.196681,95.8411719 275.944339,100.279641 282.706706,100.279641 C289.199431,100.279641 295.284142,96.7742793 295.284142,88.5714493 C295.284142,83.469516 292.988627,80.9646726 286.350437,76.5297515 L272.36447,66.8084045 C263.980695,61.1813766 258.367859,54.9015283 258.367859,45.4356327 C258.367859,31.875418 269.795764,24.0735048 282.777665,24.0735048 Z M202.981017,24.9952639 C203.392596,24.9834205 203.791551,25.1389475 204.086044,25.4267474 C204.380537,25.7145472 204.545193,26.1098225 204.542109,26.5215812 L204.542109,87.7731635 C204.542109,95.3799401 210.350082,100.208682 217.250819,100.208682 C224.151556,100.208682 230.101446,95.3799401 230.101446,87.7731635 L230.101446,26.5641565 C230.207753,25.7006835 230.9212,25.0396962 231.790264,24.9995163 L240.578504,24.9995163 C240.989463,24.9869934 241.387863,25.1420402 241.682247,25.4290644 C241.976631,25.7160886 242.141713,26.1104362 242.139616,26.5215812 L242.139616,87.9895876 C242.139616,101.950719 230.708143,110.483507 217.31823,110.483507 C204.197959,110.483507 192.769982,101.883308 192.769982,87.9895876 L192.769982,26.5215812 C192.766033,26.1107843 192.929406,25.7160489 193.222562,25.4282472 C193.515718,25.1404456 193.913398,24.9843764 194.324051,24.9952639 L202.981017,24.9952639 Z M486.3299,25.1303748 C501.071577,25.1303748 511.215129,34.4547681 511.215129,48.284626 C511.215129,57.4808784 506.343811,65.1515179 497.417202,69.6503019 C497.326258,69.6796164 497.252487,69.7469159 497.21497,69.8347946 C497.184802,69.9016194 497.17726,69.9757499 497.192344,70.0462275 L497.21497,70.1150816 L511.889237,107.616774 C512.083252,108.102153 512.019634,108.652618 511.720018,109.080946 C511.450365,109.466441 511.022228,109.706295 510.55841,109.739404 L510.402651,109.7427 L501.270262,109.7427 C500.388628,109.569164 499.643383,108.993086 499.25184,108.192595 L499.173431,108.017691 L486.19153,72.6270209 C486.093765,72.3463397 485.847424,72.1469544 485.559657,72.1061118 L485.450011,72.0983783 L473.411861,72.0983783 C473.008037,72.0982397 472.671549,72.3931295 472.609382,72.7814867 L472.599384,72.8895683 L472.599384,108.017691 C472.601535,108.427591 472.436718,108.820701 472.142883,109.106504 C471.885778,109.356582 471.549283,109.505642 471.194722,109.52995 L471.04184,109.53266 L462.2536,109.53266 C461.844805,109.544182 461.448789,109.389555 461.155959,109.104079 C460.899733,108.854287 460.741646,108.522972 460.706876,108.170078 L460.699598,108.017691 L460.699598,26.6528549 C460.698535,26.2432809 460.862961,25.8506426 461.155565,25.5640508 C461.411594,25.3132831 461.74676,25.1623158 462.100859,25.1346258 L462.2536,25.1303748 L486.3299,25.1303748 Z M156.804618,25.1300862 C172.152993,25.1300862 181.689847,34.0573991 181.689847,49.0119531 C181.689847,63.8169615 171.083982,73.2946958 157.091299,73.48277 L156.666249,73.4856217 L143.744663,73.4856217 C143.339576,73.4837137 143.001185,73.7789168 142.938685,74.1684029 L142.928637,74.2768116 L142.928637,108.145417 C142.931629,108.555278 142.768423,108.948862 142.47627,109.236336 C142.220635,109.487876 141.885365,109.639391 141.531035,109.667181 L141.378189,109.671447 L132.586401,109.671447 C131.781646,109.584234 131.152887,108.956828 131.052121,108.167496 L131.039501,108.017691 L131.039501,26.6528549 C131.033836,26.2417099 131.198918,25.8473622 131.493302,25.5603381 C131.750887,25.3091919 132.088111,25.1590909 132.443702,25.1334077 L132.597045,25.1300862 L156.804618,25.1300862 Z M334.914597,25.1264221 C335.326176,25.1146941 335.725132,25.2702212 336.019625,25.558021 C336.314118,25.8458208 336.478774,26.2410961 336.47569,26.6528549 L336.47569,60.6598298 C336.487192,61.0988394 336.845463,61.4492527 337.284619,61.4510198 L363.181011,61.4510198 C363.622312,61.4530613 363.983815,61.1010295 363.993488,60.6598298 L363.993488,26.6528549 C363.99242,26.2423401 364.15722,25.8487996 364.450489,25.5615426 C364.743758,25.2742855 365.140628,25.1176715 365.551032,25.1264221 L374.34282,25.1264221 C374.753793,25.1156765 375.151818,25.2716394 375.44553,25.5593301 C375.739242,25.8470208 375.903415,26.2417302 375.900406,26.6528549 L375.900406,108.078006 C375.90242,108.488825 375.737932,108.882948 375.444442,109.17042 C375.150953,109.457893 374.753508,109.614183 374.34282,109.604122 L365.551032,109.604122 C365.133879,109.600814 364.735035,109.431915 364.442732,109.134286 C364.150429,108.836656 363.98876,108.434827 363.993488,108.017691 L363.993488,72.4318844 C363.98765,71.9879016 363.625027,71.6316128 363.181011,71.6335986 L337.284619,71.6335986 C336.844675,71.6335986 336.482786,71.9883923 336.472142,72.4283365 L336.472142,108.014143 C336.474259,108.424348 336.309551,108.817793 336.015832,109.104152 C335.722114,109.390511 335.324616,109.545184 334.914597,109.53266 L326.126358,109.53266 C325.716632,109.54514 325.319338,109.391054 325.025171,109.105579 C324.731004,108.820103 324.565191,108.427607 324.565191,108.017691 L324.565191,26.6528549 C324.561173,26.240788 324.725511,25.8449166 325.02023,25.5568952 C325.31495,25.2688739 325.714494,25.1136789 326.126358,25.1264221 L334.914597,25.1264221 Z M442.708016,25.13079 C443.119224,25.1162016 443.518461,25.2706872 443.812745,25.5582674 C444.107028,25.8458476 444.270671,26.2414194 444.265676,26.6528549 L444.265676,33.7309889 C444.265676,34.1408887 444.10045,34.5335073 443.807288,34.819992 C443.514125,35.1064767 443.117804,35.2626087 442.708016,35.2530539 L410.858186,35.2530539 C410.417071,35.2548217 410.057213,35.6068226 410.045709,36.0477917 L410.045709,60.9826921 C410.055357,61.4244683 410.416305,61.7775353 410.858186,61.77743 L432.770244,61.77743 C433.17967,61.7668433 433.575864,61.9228662 433.868131,62.2097831 C434.160398,62.4967 434.323714,62.8899435 434.320693,63.2994949 L434.320693,70.374081 C434.323714,70.7836324 434.160398,71.1768759 433.868131,71.4637928 C433.575864,71.7507096 433.17967,71.9067326 432.770244,71.8961459 L410.858186,71.8961459 C410.417071,71.8979138 410.057213,72.2499147 410.045709,72.6908838 L410.045709,98.6227544 C410.057213,99.0637235 410.417071,99.4157244 410.858186,99.4174923 L442.708016,99.4174923 C443.555973,99.4174923 444.24782,100.0916 444.265676,100.939557 L444.265676,108.017691 C444.240652,108.860419 443.55111,109.531112 442.708016,109.53266 L399.699925,109.53266 C399.287393,109.557943 398.883369,109.407831 398.587425,109.11932 C398.291482,108.830809 398.131144,108.430732 398.145928,108.017691 L398.145928,26.6528549 C398.142877,26.2426709 398.306676,25.8488635 398.599723,25.561838 C398.89277,25.2748125 399.289893,25.1192238 399.699925,25.13079 L442.708016,25.13079 Z M156.80107,35.0508215 L143.744663,35.0508215 C143.346643,35.061076 143.019925,35.3554796 142.95962,35.7389229 L142.949925,35.8455593 L142.949925,62.6253869 C142.958854,63.0344569 143.268921,63.3672331 143.665207,63.4144034 L143.76595,63.4201247 L156.804618,63.4307685 C164.91875,63.4307685 169.516876,56.6825926 169.516876,49.0119531 C169.516876,41.0716703 165.326763,35.0508215 156.80107,35.0508215 Z M485.379052,35.0508124 L473.411861,35.0508124 C473.038971,35.0489982 472.728552,35.3228707 472.674912,35.6818316 L472.666795,35.7816965 L472.666795,61.5751976 C472.67734,61.9794192 472.980599,62.3088829 473.370841,62.3623481 L473.479272,62.3699354 L485.379052,62.4408942 C492.38337,62.4408942 498.659723,57.6142498 498.832715,49.1108876 L498.836377,48.7494057 C498.836377,40.9403967 493.766375,35.0508124 485.379052,35.0508124 Z" fill="#300D4F"> </path> </g> </g></svg>
+                            <h6 class="mt-3">Pusher</h6>
+                            <p class="text-muted mb-0">use pusher for realtime message sending and notification</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <svg width="50px" height="50px" viewBox="-4 0 264 264" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M255.855641,59.619717 C255.950565,59.9710596 256,60.3333149 256,60.6972536 L256,117.265345 C256,118.743206 255.209409,120.108149 253.927418,120.843385 L206.448786,148.178786 L206.448786,202.359798 C206.448786,203.834322 205.665123,205.195421 204.386515,205.937838 L105.27893,262.990563 C105.05208,263.119455 104.804608,263.201946 104.557135,263.289593 C104.464333,263.320527 104.376687,263.377239 104.278729,263.403017 C103.585929,263.58546 102.857701,263.58546 102.164901,263.403017 C102.051476,263.372083 101.948363,263.310215 101.840093,263.26897 C101.613244,263.186479 101.376082,263.1143 101.159544,262.990563 L2.07258227,205.937838 C0.7913718,205.201819 0,203.837372 0,202.359798 L0,32.6555248 C0,32.2843161 0.0515567729,31.9234187 0.144358964,31.5728326 C0.175293028,31.454252 0.24747251,31.3459828 0.288717928,31.2274022 C0.366053087,31.0108638 0.438232569,30.7891697 0.55165747,30.5880982 C0.628992629,30.4540506 0.742417529,30.3457814 0.83521972,30.2220451 C0.953800298,30.0570635 1.06206952,29.8869261 1.20127281,29.7425672 C1.31985339,29.6239866 1.4745237,29.5363401 1.60857131,29.4332265 C1.75808595,29.3094903 1.89213356,29.1754427 2.06227091,29.0774848 L2.06742659,29.0774848 L51.6134853,0.551122364 C52.8901903,-0.183535768 54.4613221,-0.183535768 55.7380271,0.551122364 L105.284086,29.0774848 L105.294397,29.0774848 C105.459379,29.1805983 105.598582,29.3094903 105.748097,29.4280708 C105.882144,29.5311844 106.031659,29.6239866 106.15024,29.7374115 C106.294599,29.8869261 106.397712,30.0570635 106.521448,30.2220451 C106.609095,30.3457814 106.727676,30.4540506 106.799855,30.5880982 C106.918436,30.7943253 106.985459,31.0108638 107.06795,31.2274022 C107.109196,31.3459828 107.181375,31.454252 107.212309,31.5779883 C107.307234,31.9293308 107.355765,32.2915861 107.356668,32.6555248 L107.356668,138.651094 L148.643332,114.878266 L148.643332,60.6920979 C148.643332,60.3312005 148.694889,59.9651474 148.787691,59.619717 C148.823781,59.4959808 148.890804,59.3877116 148.93205,59.269131 C149.014541,59.0525925 149.08672,58.8308984 149.200145,58.629827 C149.27748,58.4957794 149.390905,58.3875102 149.478552,58.2637739 C149.602288,58.0987922 149.705401,57.9286549 149.84976,57.7842959 C149.968341,57.6657153 150.117856,57.5780688 150.251903,57.4749553 C150.406573,57.351219 150.540621,57.2171714 150.705603,57.1192136 L150.710758,57.1192136 L200.261973,28.5928511 C201.538395,27.8571345 203.110093,27.8571345 204.386515,28.5928511 L253.932573,57.1192136 C254.107866,57.2223271 254.241914,57.351219 254.396584,57.4697996 C254.525476,57.5729132 254.674991,57.6657153 254.793572,57.7791402 C254.93793,57.9286549 255.041044,58.0987922 255.16478,58.2637739 C255.257582,58.3875102 255.371007,58.4957794 255.443187,58.629827 C255.561767,58.8308984 255.628791,59.0525925 255.711282,59.269131 C255.757683,59.3877116 255.824707,59.4959808 255.855641,59.619717 Z M247.740605,114.878266 L247.740605,67.8378666 L230.402062,77.8192579 L206.448786,91.6106946 L206.448786,138.651094 L247.745761,114.878266 L247.740605,114.878266 Z M198.194546,199.97272 L198.194546,152.901386 L174.633101,166.357704 L107.351512,204.757188 L107.351512,252.27191 L198.194546,199.97272 Z M8.25939501,39.7961379 L8.25939501,199.97272 L99.0921175,252.266755 L99.0921175,204.762344 L51.6392637,177.906421 L51.6237967,177.89611 L51.603174,177.885798 C51.443348,177.792996 51.3093004,177.658949 51.1597857,177.545524 C51.0308938,177.44241 50.8813791,177.359919 50.7679542,177.246494 L50.7576429,177.231027 C50.6235953,177.102135 50.5307931,176.942309 50.4173682,176.79795 C50.3142546,176.658747 50.1905184,176.540167 50.1080276,176.395808 L50.1028719,176.380341 C50.0100697,176.22567 49.9533572,176.040066 49.8863334,175.864773 C49.8193096,175.710103 49.7316631,175.565744 49.6904177,175.400762 L49.6904177,175.395606 C49.6388609,175.19969 49.6285496,174.993463 49.6079269,174.792392 C49.5873041,174.637722 49.5460587,174.483051 49.5460587,174.328381 L49.5460587,174.31807 L49.5460587,63.5689658 L25.5979377,49.7723734 L8.25939501,39.8012935 L8.25939501,39.7961379 Z M53.6809119,8.89300821 L12.3994039,32.6555248 L53.6706006,56.4180414 L94.9469529,32.6503692 L53.6706006,8.89300821 L53.6809119,8.89300821 Z M75.1491521,157.19091 L99.0972731,143.404629 L99.0972731,39.7961379 L81.7587304,49.7775291 L57.8054537,63.5689658 L57.8054537,167.177457 L75.1491521,157.19091 Z M202.324244,36.934737 L161.047891,60.6972536 L202.324244,84.4597702 L243.59544,60.6920979 L202.324244,36.934737 Z M198.194546,91.6106946 L174.24127,77.8192579 L156.902727,67.8378666 L156.902727,114.878266 L180.850848,128.664547 L198.194546,138.651094 L198.194546,91.6106946 Z M103.216659,197.616575 L163.759778,163.052915 L194.023603,145.781396 L152.778185,122.034346 L105.289242,149.374903 L62.0073307,174.292291 L103.216659,197.616575 Z" fill="#FF2D20"> </path> </g> </g></svg>
+                            <h6 class="mt-3">Laravel</h6>
+                            <p class="text-muted mb-0">use laravel as a full stack framework</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <svg height="50" viewBox="0 0 504.30883 504" width="50" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="m241.835938 500.21875c-132.261719-5.398438-237.820313-114.339844-237.820313-247.917969 0-136.679687 110.5-247.539062 247.039063-248.140625h1.101562c120.296875 0 220.746094 85.660156 243.359375 199.480469 31.253906 156.671875-92.105469 303.414063-253.679687 296.578125zm0 0"
+                                  fill="#1c868e" />
+                                <path
+                                  d="m241.835938 500.21875c-233.347657-110.84375-228.410157-391.066406 9.21875-496.058594h1.101562c120.296875 0 220.746094 85.660156 243.359375 199.480469 31.390625 157.359375-92.957031 303.378906-253.679687 296.578125zm0 0"
+                                  fill="#40c4df" />
+                                <path
+                                  d="m500.292969 252.300781c0 18.539063-2.039063 36.621094-5.898438 54h-238.238281c-28.363281 0-51.339844-22.980469-51.339844-51.339843 0-14.179688 5.738282-27 15.039063-36.28125 9.277343-9.300782 22.121093-15.039063 36.300781-15.039063h239.359375c3.140625 15.738281 4.777344 32 4.777344 48.660156zm0 0"
+                                  fill="#f85252" />
+                                <g fill="#491352">
+                                  <path
+                                    d="m310.050781 276.238281-14.503906-53.386719h-9.242187l-15.226563 53.570313-13.777344-53.570313h-8.792969l17.675782 63.265626 9.15625-.089844 15.226562-50.847656 14.683594 50.847656h9.242188l18.308593-63.175782h-8.882812zm0 0" />
+                                  <path
+                                    d="m369.964844 251.496094v-.457032c6.886718-1.539062 11.601562-7.429687 11.601562-14.953124 0-22.722657-39.503906-22.980469-41.238281.90625h8.066406c.8125-6.347657 5.4375-10.699219 13.140625-10.699219 7.886719 0 12.054688 4.351562 12.054688 10.609375 0 7.613281-5.890625 10.964844-16.859375 11.054687h-2.175781v6.886719h2.085937c11.78125 0 18.214844 3.535156 18.214844 12.78125 0 16.195312-25.628907 16-27.550781-.453125h-7.976563c.996094 12.6875 10.242187 19.304687 22.660156 19.304687 13.6875 0 20.753907-7.976562 20.753907-18.125.003906-9.425781-5.164063-15.046874-12.777344-16.855468zm0 0" />
+                                  <path
+                                    d="m443.109375 241.164062h9.878906c-11.679687-30.320312-60.820312-23.746093-60.820312 13.230469 0 36.976563 49.207031 43.15625 60.820312 13.234375h-9.878906c-8.5625 18.683594-42.511719 15.878906-42.511719-13.234375.003906-29.296875 34.015625-32.007812 42.511719-13.230469zm0 0" />
+                                  <path
+                                    d="m252.15625.15625c-219.199219 0-332.78125 261.226562-186.3125 421.867188.238281.425781.46875.824218 1.253906 1.347656 100.042969 108.140625 270.160156 108.070312 370.136719-.027344.703125-.460938 1.007813-.878906 1.296875-1.394531 146.382812-160.671875 32.757812-421.792969-186.375-421.792969zm238.410156 199.484375h-105.789062c-4.136719-24.824219-11.246094-48.757813-20.953125-71.203125 25.335937-9.621094 49.128906-22.53125 70.542969-38.445312 27.320312 30.636718 47.042968 68.179687 56.199218 109.648437zm-61.636718-115.570313c-20.773438 15.339844-43.835938 27.785157-68.382813 37.0625-21.390625-46.054687-53.828125-85.375-93.839844-112.53125 63.664063 3.761719 120.851563 32.015626 162.222657 75.46875zm-172.773438-72.828124c41.414062 26.28125 74.992188 65.835937 96.851562 112.621093-30.65625 10.652344-63.445312 16.4375-96.851562 16.863281zm0 137.484374c34.542969-.429687 68.457031-6.445312 100.152344-17.539062 9.367187 21.578125 16.269531 44.582031 20.355468 68.453125h-120.507812zm-105.039062-24.890624c21.613281-46.5625 54.933593-85.910157 97.039062-112.578126v129.46875c-33.476562-.425781-66.332031-6.21875-97.039062-16.890624zm97.039062 24.890624v51.488282c-24.550781 3.53125-43.96875 23.25-46.929688 48.085937h-77.984374c.523437-41.425781 9.148437-81.265625 24.605468-117.132812 31.730469 11.105469 65.699219 17.128906 100.308594 17.558593zm-10.519531-140.128906c-40.648438 27.476563-72.898438 66.609375-94.066407 112.5-24.5-9.261718-47.519531-21.671875-68.246093-36.96875 41.382812-43.496094 98.601562-71.777344 162.3125-75.53125zm-167.75 81.457032c21.382812 15.875 45.136719 28.757812 70.4375 38.363281-15.773438 36.75-24.558594 77.515625-25.082031 119.882812h-107.183594c.980468-60.664062 24.191406-116.011719 61.828125-158.246093zm.054687 324.554687c-37.667968-42.246094-60.902344-97.617187-61.882812-158.308594h107.183594c.523437 42.371094 9.328124 83.144531 25.128906 119.902344-25.292969 9.617187-49.046875 22.511719-70.429688 38.40625zm5.4375 5.921875c20.734375-15.3125 43.746094-27.738281 68.242188-37.007812 21.195312 45.871093 53.46875 85 94.152344 112.488281-63.734376-3.722657-120.984376-31.988281-162.394532-75.480469zm172.777344 72.734375c-42.074219-26.675781-75.375-65.992187-96.984375-112.484375 30.691406-10.679688 63.527344-16.480469 96.984375-16.910156zm0-137.394531c-34.585938.433594-68.539062 6.460937-100.261719 17.582031-15.488281-35.878906-24.128906-75.726563-24.652343-117.152344h77.605468c.652344 27.195313 21.003906 49.585938 47.308594 53.414063zm105.066406 24.902344c-21.710937 46.816406-55.117187 85.941406-97.066406 112.519531v-129.421875c33.484375.429687 66.347656 6.226562 97.066406 16.902344zm-97.066406-24.902344v-45.570313h119.542969c-4.175781 22.113281-10.648438 43.277344-19.199219 63.144531-31.742188-11.113281-65.726562-17.140624-100.34375-17.574218zm10.460938 140.136718c40.546874-27.382812 72.886718-66.339843 94.15625-112.492187 24.488281 9.257813 47.492187 21.664063 68.214843 36.953125-41.398437 43.507812-98.640625 71.796875-162.371093 75.539062zm167.804687-81.460937c-21.371094-15.867187-45.109375-28.742187-70.394531-38.347656 8.882812-20.726563 15.5625-42.820313 19.808594-65.898438h105.484374c-9.617187 39.324219-28.785156 74.941407-54.898437 104.246094zm-178.265625-112.246094c-41.988281 0-63.183594-51.144531-33.46875-80.792969 8.921875-8.945312 20.808594-13.867187 33.46875-13.867187h236.035156c5.867188 31.589844 5.394532 63.824219-1.046875 94.660156zm0 0" />
+                                </g>
+                              </svg>
+                            <h6 class="mt-3">W3C Validated</h6>
+                            <p class="text-muted mb-0">Code is validate through W3C web standards</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <img src="{{ asset('frontend/images/development.svg') }}" alt="">
+                            <h6 class="mt-3">Quality & Clean Code</h6>
+                            <p class="text-muted mb-0">It’s written with well code structure as clean & commented</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <img src="{{ asset('frontend/images/responsive.svg') }}" alt="">
+                            <h6 class="mt-3">Responsive & User-Friendly</h6>
+                            <p class="text-muted mb-0">Complete responsive & user-friendly to pleasing your user</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- Feature box -->
+                        <div class="feature text-center border rounded theme-shadow-sm p-3 mb-4">
+                            <img src="{{ asset('frontend/images/pencil.svg') }}" alt="">
+                            <h6 class="mt-3">Easy Customizable</h6>
+                            <p class="text-muted mb-0">We offers highly scalable and endless customization</p>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+            </div>
+        </section>
+        <!-- Section End -->
+        
+        <!-- Section Start -->
+        <section class="bg-white py-5 border-bottom theme-shadow" id="support">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-4">
+                    <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-10">
+                        <!-- Section Title -->
+                        <h2 class="font-weight-semibold">Support</h2>
+                    </div>
+                </div>
+                <div class="row row-eq-height justify-content-center">
+                    <div class="col-md-6">
+                        <!-- Support card -->
+                        <div class="card mb-2">
+                            <div class="card-body text-center">
+                                <img class="mb-3" src="{{ asset('frontend/images/question.svg') }}" alt="">
+                                <h4 class="display-6 mb-2">Need Support?</h4>
+                                <p class="text-muted">Email us on <a class="link" href="#">rpsohag.bd@gmail.com</a>. The support response time is 24-48 hours but normally we tend to settle the questions earlier than 24 hours.</p>
                             </div>
                         </div>
-                    </main>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Prepurchase Questions Card -->
+                        <div class="card mb-2">
+                            <div class="card-body text-center">
+                                <img class="mb-3" src="{{ asset('frontend/images/question.svg') }}" alt="">
+                                <h4 class="display-6 mb-2">Pre-Purchase Questions</h4>
+                                <p class="text-muted">Feel free  to ask any questions before making purchase to know more about the theme. We will clear all your questions. Email us on <a class="link" href="#">rpsohag.bd@gmail.com</a>. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section End -->
+    </main>
+    <!-- Main End -->
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+    <!-- Footer Start -->
+    <footer class="bg-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>copyright all right reserved</p>
                 </div>
             </div>
         </div>
-    </body>
+    </footer>
+    <!-- Footer End -->
+    <script src="{{ asset("frontend/js/home.page.js") }}"></script>
+</body>
 </html>

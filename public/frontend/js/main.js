@@ -129,4 +129,5 @@ $(function () {
     $(window).resize(function () {
         adjustHeight();
     });
+
 });
