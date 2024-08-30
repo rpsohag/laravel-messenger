@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
         <div class="container">
             <!-- Navbar Brand -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ route('welcome.page') }}">
                 <img src="{{ asset('frontend/images/logo.webp') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Laravel Messenger
             </a>

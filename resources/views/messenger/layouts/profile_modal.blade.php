@@ -58,7 +58,7 @@ aria-hidden="true">
                 $(".error-message").removeClass("d-block").addClass("d-none").text('');
                 $.ajax({
                     method: 'POST',
-                    url: "{{ route('profile.update') }}",
+                    url: "{{ route('messenger.profile.update') }}",
                     data: formData,
                     processData: false,
                     contentType: false,

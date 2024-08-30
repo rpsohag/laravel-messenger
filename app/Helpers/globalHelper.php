@@ -1,6 +1,5 @@
 <?php
 
-namespace App\Helpers;
 use Illuminate\Support\Str;
 
 if(!function_exists('timeAgo')){

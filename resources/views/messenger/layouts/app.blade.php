@@ -10,7 +10,7 @@
     <meta name="auth_id" content="{{ auth()->user()->id }}">
     <meta name="url" content="{{ public_path() }}">
     <meta name="id" content="" />
-    <link rel="icon" type="image/png" href="{{ asset('frontend/images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/chat_list_icon.png') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}">

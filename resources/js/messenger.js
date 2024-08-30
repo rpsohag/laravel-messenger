@@ -500,7 +500,9 @@ window.Echo.private("message." + auth_id)
 
         if(getMessengerId() != e.from_id){
             updateContactItem(e.from_id)
-            playNotificationSound()
+            if (document.readyState === 'complete') {
+                playNotificationSound();
+            }
         }
 
         let message = receiveMessageCard(e)
