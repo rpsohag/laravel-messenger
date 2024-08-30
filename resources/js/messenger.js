@@ -45,8 +45,9 @@ function imagePreview(input, selector){
 
 function messageFormReset(){
     $(".attachment_block").addClass('d-none')
-    $(".emojionearea-editor").text("")
-    $("input[type='file']").val(null)
+    messageForm.trigger("reset");
+    let emojiElt = $("#example1").emojioneArea();
+    emojiElt.data("emojioneArea").setText("");
 }
 
 // scroll to bottom
@@ -74,6 +75,7 @@ function updateContactItem(user_id){
                 user_id: user_id
             },
             success: function(data){
+                messengerContactBox.find(".no_contact").remove();
                 messengerContactBox.find(`.messenger_list_item[data-id="${user_id}"]`).remove()
                 messengerContactBox.prepend(data.contact_item)
 
@@ -572,6 +574,8 @@ $(document).ready(function(){
         $("body").on("click", ".back_to_list", function(){
             $(".wsus__user_list").removeClass("d-none")
         })
+        idInfo(getMessengerId());
+        messageFormReset();
     }
 
     getContacts();

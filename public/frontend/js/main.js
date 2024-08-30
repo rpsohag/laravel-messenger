@@ -118,7 +118,7 @@ $(function () {
         var windowHeight = $(window).height();
         $('.wsus__chat_area_body').css('height', (windowHeight-120) + 'px');
         $('.messenger-contacts').css('max-height', (windowHeight - 393) + 'px');
-        $('.wsus__chat_info_gallery').css('height', (windowHeight - 360) + 'px');
+        $('.wsus__chat_info_gallery').css('height', (windowHeight - 400) + 'px');
         $('.user_search_list_result').css({
             'height': (windowHeight - 130) + 'px',
         });
