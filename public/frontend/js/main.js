@@ -67,9 +67,6 @@ $(function () {
         $(this).addClass("active");
     });
 
-    //===venobox.js===
-    $('.venobox').venobox();
-
 
     // emoji js
     $(document).ready(function () {

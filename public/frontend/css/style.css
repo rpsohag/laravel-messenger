@@ -724,6 +724,7 @@ button {
 }
 
 .wsus__single_chat {
+    width: 30%;
     position: relative;
     padding-right: 30px;
     text-align: left;

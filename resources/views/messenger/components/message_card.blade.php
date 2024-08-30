@@ -1,9 +1,7 @@
 @if ($attachment)
 <div class="wsus__single_chat_area message_card" data-id="{{ $id }}">
     <div class="wsus__single_chat {{ $from_id === auth()->user()->id ? 'chat_right' : "" }}">
-        <a class="venobox" data-gall="gallery01" href="images/chat_img.png">
-            <img src="{{ asset($attachment) }}" alt="gallery1" class="img-fluid w-100">
-        </a>
+            <img src="{{ asset($attachment) }}" id="messageImg{{ $id }}" alt="message" class="img-fluid messageImg">
         @if($message)
         <p class="messages">{{ $message }}</p>
         @endif

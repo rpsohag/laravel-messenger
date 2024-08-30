@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/venobox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/emojionearea.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/css/spacing.css') }}">
@@ -34,6 +33,12 @@
         Chatting Application End
     ===================================-->
 
+    <!-- message modal modal -->
+    <div id="messageImgModal" class="messageModal">
+        <span class="messageImgClose">&times;</span>
+        <img src="" class="messageModalImg" alt="">
+    </div>
+
 
     <!--jquery library js-->
     <script src="{{ asset('frontend/js/jquery-3.7.1.min.js') }}"></script>
@@ -42,7 +47,6 @@
     <!--font-awesome js-->
     <script src="{{ asset('frontend/js/Font-Awesome.js') }}"></script>
     <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
     <script src="{{ asset('frontend/js/emojionearea.min.js') }}"></script>
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
