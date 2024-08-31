@@ -92,14 +92,14 @@ function updateContactItem(user_id){
 }
 
 function updateSelectedContent(user_id){
-    $("body").find('.messenger_list_item').removeClass('active')
-    $("body").find(`.messenger_list_item[data-id="${user_id}"]`).addClass('active')
+    $('.messenger_list_item').removeClass('active')
+    $(`.messenger_list_item[data-id="${user_id}"]`).addClass('active')
 }
 
 // make message seen
 
 function makeSeen(status){
-    $(`.messenger_item_list[data-id="${getMessengerId()}"]`).find(".unseen_count").remove()
+    $(`.messenger_list_item[data-id="${getMessengerId()}"]`).find(".unseen_count").remove()
     $.ajax({
         method: "POST",
         url: "/messenger/make-seen",
@@ -611,6 +611,7 @@ $(document).ready(function(){
         updateSelectedContent(dataId)
         setMessengerId(dataId)
         idInfo(dataId);
+        messageFormReset()
     })
 
     // send message
