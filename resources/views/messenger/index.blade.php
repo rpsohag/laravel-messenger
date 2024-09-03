@@ -38,7 +38,7 @@
                 <form action="#" class="message-form" enctype="multipart/form-data">
                     <div class="file">
                         <label for="file"><i class="far fa-plus attachment_label"></i></label>
-                        <input id="file" type="file" name="attachment" hidden class="attachment_input">
+                        <input id="file" type="file" name="attachment" accept="image/png, image/gif, image/jpeg, image/jpg" hidden class="attachment_input">
                     </div>
                     <textarea id="example1" name="message" class="message_input" rows="1" placeholder="Type a message.."></textarea>
                     <button type="submit"><i class="fas fa-paper-plane"></i></button>

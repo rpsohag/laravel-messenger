@@ -71,7 +71,7 @@ class MessengerController extends Controller
             'id' => ['required'],
             // 'message' => ['required'],
             'temporaryMsgId' => ['required'],
-            'attachment' => ['nullable', 'max:1024']
+            'attachment' => ['nullable', 'max:4096']
         ]);
 
         $attachmentPath = $this->uploadFile($request, 'attachment');
